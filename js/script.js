@@ -9,14 +9,17 @@ function createParticle() {
     particle.style.borderRadius = '50%';
     particle.style.pointerEvents = 'none';
     particle.style.zIndex = '1';
-    particle.style.left = Math.random() * window.innerWidth + 'px';
-    particle.style.top = window.innerHeight + 'px';
+    // Always use current window size
+    const currentWidth = window.innerWidth;
+    const currentHeight = window.innerHeight;
+    particle.style.left = Math.random() * currentWidth + 'px';
+    particle.style.top = currentHeight + 'px';
     
     document.body.appendChild(particle);
     
     const animation = particle.animate([
         { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-        { transform: `translateY(-${window.innerHeight + 100}px) rotate(720deg)`, opacity: 0 }
+        { transform: `translateY(-${currentHeight + 100}px) rotate(720deg)`, opacity: 0 }
     ], {
         duration: Math.random() * 3000 + 2000,
         easing: 'linear'

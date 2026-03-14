@@ -48,7 +48,7 @@ section {
 }
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,6 +56,7 @@ section {
     overflow: hidden;
     border-radius: 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
 }
 
 .hero-content {
@@ -69,10 +70,17 @@ section {
 }
 
 .hero-logo img {
-    max-width: 200px;
+    max-width: 80%;
     height: auto;
+    max-height: 300px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+    .hero-logo img {
+        max-width: 200px;
+    }
 }
 
 @keyframes logo-float {
@@ -88,7 +96,7 @@ section {
 }
 
 .hero h2 {
-    font-size: 6rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     background: linear-gradient(45deg, #fff 0%, #f0f0f0 100%);
     -webkit-background-clip: text;
@@ -98,14 +106,14 @@ section {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
     color: rgba(255, 255, 255, 0.8);
     max-width: 800px;
@@ -115,7 +123,7 @@ section {
 }
 
 .hero-slogan {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
     -webkit-background-clip: text;
@@ -123,6 +131,24 @@ section {
     background-clip: text;
     margin-bottom: 2rem;
     animation: glow 2s ease-in-out infinite alternate;
+}
+
+@media (min-width: 768px) {
+    .hero h2 {
+        font-size: 6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.2rem;
+    }
+    
+    .hero-slogan {
+        font-size: 1.8rem;
+    }
 }
 
 @keyframes glow {
@@ -221,14 +247,22 @@ section {
     main {
         padding: 1rem;
     }
-    
-    .hero h2 {
-        font-size: 4rem;
-    }
 }
 
 @media (max-width: 480px) {
     .hero h2 {
         font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    .hero-slogan {
+        font-size: 1.2rem;
     }
 }
